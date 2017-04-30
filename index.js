@@ -1,5 +1,8 @@
 'use strict';
 var Alexa = require("alexa-sdk");
+var tweets = require("./tweets");
+
+tweets();
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);

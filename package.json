@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/WalternativE/TinyCareAlexa#readme",
   "dependencies": {
-    "alexa-sdk": "^1.0.9"
+    "alexa-sdk": "^1.0.9",
+    "twitter": "^1.7.0"
   }
 }

@@ -2,8 +2,8 @@
     "greeting": "Hello there! I'm your tiny helper. How  long do you plan to work?",
     "start": "The timer set to {N}. Have a very productive time!",
     "tweets": [
-        "please take a quick moment to get some fresh air",
         "please remember to go get a sip of water",
+        "please take a quick moment to get some fresh air",
         "Hey! I told you to get a sip of water. You are looking like a dried out zombie. Comply, or I will have to force you.",
         "remember to take time to rest your eyes please",
         "please dont forget to look at some nature and rest your eyes"

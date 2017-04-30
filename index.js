@@ -31,11 +31,10 @@ var handlers = {
 function buildResponse(duration) {
     var speech = new Speech();
     speech.say(text.start.replace(/{N}/g, duration));
-    speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
-    speech.say(text.tweets[0]);
-    speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
-    speech.say(text.tweets[1]);
-    speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
+    text.tweets.forEach(function(element) {
+        speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
+        speech.say(element);
+    });
     var speechOutput = speech.ssml(true);
     return speechOutput;
 }

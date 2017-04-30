@@ -21,8 +21,9 @@ var handlers = {
         this.emit(':ask', text.greeting);
     },
     'StartWork': function () {
-        
-        var res = buildResponse("N");
+        var intentObj = this.event.request.intent;
+        var duration = moment.duration(intentObj.slots.Duration).humanize();
+        var res = buildResponse(duration);
         this.emit(':tell', res);
     }
 };

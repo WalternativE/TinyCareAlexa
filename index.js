@@ -2,6 +2,7 @@
 var Alexa = require("alexa-sdk");
 var text = require("./src/text.json");
 var Speech = require('ssml-builder');
+var moment = require('moment');
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -20,15 +21,20 @@ var handlers = {
         this.emit(':ask', text.greeting);
     },
     'StartWork': function () {
-        var res = buildResponse();
+        
+        var res = buildResponse("N");
         this.emit(':tell', res);
     }
 };
 
-function buildResponse() {
+function buildResponse(duration) {
     var speech = new Speech();
-    speech.say(text.start);
-    speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa20.mp3");
+    speech.say(text.start.replace(/{N}/g, duration));
+    speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
+    speech.say(text.tweets[0]);
+    speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
+    speech.say(text.tweets[1]);
+    speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
     var speechOutput = speech.ssml(true);
     return speechOutput;
 }

@@ -34,6 +34,7 @@ function buildResponse(duration) {
     for(var tweet of text.tweets) {
         speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
         speech.say(tweet);
+        sepech.pause('3s');
     }
     var speechOutput = speech.ssml(true);
     return speechOutput;

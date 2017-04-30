@@ -1,0 +1,25 @@
+{
+  "name": "tiny-care-alexa",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WalternativE/TinyCareAlexa.git"
+  },
+  "keywords": [
+    "alexa"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WalternativE/TinyCareAlexa/issues"
+  },
+  "homepage": "https://github.com/WalternativE/TinyCareAlexa#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.9"
+  }
+}

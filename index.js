@@ -22,7 +22,7 @@ var handlers = {
     },
     'StartWork': function () {
         var intentObj = this.event.request.intent;
-        var duration = moment.duration(intentObj.slots.Duration).humanize();
+        var duration = moment.duration(intentObj.slots.Duration.value).humanize();
         var res = buildResponse(duration);
         this.emit(':tell', res);
     }
@@ -32,7 +32,7 @@ function buildResponse(duration) {
     var speech = new Speech();
     speech.say(text.start.replace(/{N}/g, duration));
     for(var tweet of text.tweets) {
-        speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa5.mp3");
+        speech.audio("https://d10.at/TinyCareAlexa/whitenoiseAlexa10.mp3");
         speech.say(tweet);
         speech.pause('3s');
     }
